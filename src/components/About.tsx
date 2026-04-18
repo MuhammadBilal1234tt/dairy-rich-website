@@ -58,7 +58,7 @@ export default function About() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <ScrollReveal key={feature.title} delay={index * 150}>
-              <div className="group card-hover bg-[#F5F9FF] border border-[#E0EDFF] rounded-2xl p-8 h-full">
+              <div className="group card-hover bg-[#F5F9FF] border border-[#E0EDFF] rounded-2xl p-6 sm:p-8 h-full">
                 <div className="w-14 h-14 bg-[#0046A4] rounded-xl flex items-center justify-center mb-6 shadow-md group-hover:scale-105 transition-transform duration-300">
                   {feature.icon}
                 </div>
@@ -73,7 +73,7 @@ export default function About() {
 
         {/* Bottom trust bar */}
         <ScrollReveal delay={300} className="mt-16">
-          <div className="bg-[#0046A4] rounded-3xl p-8 text-white text-center">
+          <div className="bg-[#0046A4] rounded-3xl p-6 sm:p-8 text-white text-center">
             <p className="text-xl sm:text-2xl font-semibold mb-2">
               Trusted by hundreds of families across Lahore
             </p>

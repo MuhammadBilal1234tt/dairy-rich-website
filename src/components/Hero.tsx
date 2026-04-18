@@ -62,11 +62,11 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center py-24">
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center py-20 sm:py-24">
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-5 py-2 mb-8 animate-fade-in">
-          <span className="w-2 h-2 bg-[#25D366] rounded-full" />
-          <span className="text-white/90 text-sm font-medium tracking-wide">Lahore&apos;s Trusted Organic Dairy Farm</span>
+        <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 sm:px-5 py-2 mb-8 animate-fade-in">
+          <span className="w-2 h-2 flex-shrink-0 bg-[#25D366] rounded-full" />
+          <span className="text-white/90 text-xs sm:text-sm font-medium tracking-wide">Lahore&apos;s Trusted Organic Dairy Farm</span>
         </div>
 
         {/* Brand name */}
@@ -96,12 +96,12 @@ export default function Hero() {
         </p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-slide-up" style={{ animationDelay: '0.3s' }}>
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4 animate-slide-up" style={{ animationDelay: '0.3s' }}>
           <a
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="group whatsapp-pulse bg-[#25D366] hover:bg-[#1ebe5d] text-white px-8 py-4 rounded-full text-base font-semibold flex items-center gap-3 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-2xl shadow-lg shadow-green-500/30"
+            className="group whatsapp-pulse bg-[#25D366] hover:bg-[#1ebe5d] text-white px-8 py-4 rounded-full text-base font-semibold flex items-center justify-center gap-3 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-2xl shadow-lg shadow-green-500/30"
           >
             <WhatsAppIcon />
             Chat on WhatsApp
@@ -115,21 +115,21 @@ export default function Hero() {
               e.preventDefault()
               document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' })
             }}
-            className="text-white border border-white/40 hover:border-white hover:bg-white/10 px-8 py-4 rounded-full text-base font-medium transition-all duration-300"
+            className="text-white border border-white/40 hover:border-white hover:bg-white/10 px-8 py-4 rounded-full text-base font-medium text-center transition-all duration-300"
           >
             Learn More
           </a>
         </div>
 
         {/* Stats */}
-        <div className="mt-16 grid grid-cols-3 gap-4 max-w-lg mx-auto animate-slide-up" style={{ animationDelay: '0.4s' }}>
+        <div className="mt-16 grid grid-cols-3 gap-2 sm:gap-4 max-w-lg mx-auto animate-slide-up" style={{ animationDelay: '0.4s' }}>
           {[
             { value: '100%', label: 'Organic' },
             { value: '2–3 hrs', label: 'Fresh Delivery' },
             { value: 'Rs.240', label: 'Starting Price' },
           ].map((stat) => (
-            <div key={stat.label} className="text-center glass rounded-2xl py-4 px-3">
-              <div className="text-white text-xl font-bold">{stat.value}</div>
+            <div key={stat.label} className="text-center glass rounded-2xl py-4 px-2 sm:px-3">
+              <div className="text-white text-lg sm:text-xl font-bold">{stat.value}</div>
               <div className="text-white/65 text-xs mt-1 tracking-wide">{stat.label}</div>
             </div>
           ))}
