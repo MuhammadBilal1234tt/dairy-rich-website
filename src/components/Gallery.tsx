@@ -136,12 +136,12 @@ export default function Gallery() {
           <div className="relative max-w-4xl w-full" onClick={(e) => e.stopPropagation()}>
             <button
               onClick={() => setLightboxImg(null)}
-              className="absolute -top-12 right-0 text-white/80 hover:text-white text-sm flex items-center gap-2"
+              className="absolute top-3 right-3 z-10 text-white/80 hover:text-white bg-black/40 hover:bg-black/60 backdrop-blur-sm rounded-full w-9 h-9 flex items-center justify-center transition-all"
+              aria-label="Close"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
-              Close
             </button>
             <div className="relative aspect-video rounded-2xl overflow-hidden">
               <Image

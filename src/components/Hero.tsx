@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import Image from 'next/image'
 
 const WHATSAPP_URL = 'https://wa.me/923184965522?text=Hello%20Dairy%20Rich!%20I%20would%20like%20to%20enquire%20about%20fresh%20milk%20delivery.'
 
@@ -23,22 +24,49 @@ export default function Hero() {
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#0046A4] via-[#005bbf] to-[#1BA0A8]" />
+      {/* Farm photo background */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/farm1.jpg"
+          alt=""
+          fill
+          priority
+          className="object-cover object-center"
+          sizes="100vw"
+        />
+      </div>
 
-      {/* Subtle background shapes */}
-      <div ref={parallaxRef} className="absolute inset-0 hero-parallax pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-white/5" />
-        <div className="absolute -bottom-32 -left-32 w-80 h-80 rounded-full bg-white/5" />
-        <div className="absolute top-1/3 right-1/4 w-48 h-48 rounded-full bg-white/5" />
+      {/* Dark + brand-colour overlay for legibility */}
+      <div className="absolute inset-0 z-[1] bg-gradient-to-br from-[#0046A4]/90 via-[#005bbf]/80 to-[#1BA0A8]/75" />
+
+      {/* Decorative geometric shapes */}
+      <div ref={parallaxRef} className="absolute inset-0 z-[2] hero-parallax pointer-events-none">
+        {/* large blurred circles */}
+        <div className="absolute -top-40 -right-40 w-[32rem] h-[32rem] rounded-full bg-white/5 blur-3xl" />
+        <div className="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-white/5 blur-3xl" />
+        {/* mid accent ring */}
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full border border-white/10" />
+        <div className="absolute bottom-1/4 right-1/4 w-48 h-48 rounded-full border border-white/10" />
+        {/* small filled circles */}
+        <div className="absolute top-1/3 right-1/4 w-40 h-40 rounded-full bg-white/5" />
+        <div className="absolute top-1/2 left-1/6 w-24 h-24 rounded-full bg-white/5" />
+        {/* diagonal stripe overlay */}
+        <div
+          className="absolute inset-0 opacity-[0.04]"
+          style={{
+            backgroundImage:
+              'repeating-linear-gradient(45deg, white 0, white 1px, transparent 0, transparent 50%)',
+            backgroundSize: '30px 30px',
+          }}
+        />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center py-24">
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center py-20 sm:py-24">
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-5 py-2 mb-8 animate-fade-in">
-          <span className="w-2 h-2 bg-[#25D366] rounded-full" />
-          <span className="text-white/90 text-sm font-medium tracking-wide">Lahore&apos;s Trusted Organic Dairy Farm</span>
+        <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 sm:px-5 py-2 mb-8 animate-fade-in">
+          <span className="w-2 h-2 flex-shrink-0 bg-[#25D366] rounded-full" />
+          <span className="text-white/90 text-xs sm:text-sm font-medium tracking-wide">Lahore&apos;s Trusted Organic Dairy Farm</span>
         </div>
 
         {/* Brand name */}
@@ -68,12 +96,12 @@ export default function Hero() {
         </p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-slide-up" style={{ animationDelay: '0.3s' }}>
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4 animate-slide-up" style={{ animationDelay: '0.3s' }}>
           <a
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="group whatsapp-pulse bg-[#25D366] hover:bg-[#1ebe5d] text-white px-8 py-4 rounded-full text-base font-semibold flex items-center gap-3 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-2xl shadow-lg shadow-green-500/30"
+            className="group whatsapp-pulse bg-[#25D366] hover:bg-[#1ebe5d] text-white px-8 py-4 rounded-full text-base font-semibold flex items-center justify-center gap-3 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-2xl shadow-lg shadow-green-500/30"
           >
             <WhatsAppIcon />
             Chat on WhatsApp
@@ -87,21 +115,21 @@ export default function Hero() {
               e.preventDefault()
               document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' })
             }}
-            className="text-white border border-white/40 hover:border-white hover:bg-white/10 px-8 py-4 rounded-full text-base font-medium transition-all duration-300"
+            className="text-white border border-white/40 hover:border-white hover:bg-white/10 px-8 py-4 rounded-full text-base font-medium text-center transition-all duration-300"
           >
             Learn More
           </a>
         </div>
 
         {/* Stats */}
-        <div className="mt-16 grid grid-cols-3 gap-4 max-w-lg mx-auto animate-slide-up" style={{ animationDelay: '0.4s' }}>
+        <div className="mt-16 grid grid-cols-3 gap-2 sm:gap-4 max-w-lg mx-auto animate-slide-up" style={{ animationDelay: '0.4s' }}>
           {[
             { value: '100%', label: 'Organic' },
             { value: '2–3 hrs', label: 'Fresh Delivery' },
             { value: 'Rs.240', label: 'Starting Price' },
           ].map((stat) => (
-            <div key={stat.label} className="text-center glass rounded-2xl py-4 px-3">
-              <div className="text-white text-xl font-bold">{stat.value}</div>
+            <div key={stat.label} className="text-center glass rounded-2xl py-4 px-2 sm:px-3">
+              <div className="text-white text-lg sm:text-xl font-bold">{stat.value}</div>
               <div className="text-white/65 text-xs mt-1 tracking-wide">{stat.label}</div>
             </div>
           ))}

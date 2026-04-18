@@ -89,7 +89,7 @@ export default function Coverage() {
                 {deliveryAreas.map((area, index) => (
                   <div
                     key={area}
-                    className="flex items-center gap-2 text-sm text-gray-700 py-2 px-3 bg-[#F5F9FF] rounded-lg hover:bg-[#E0EDFF] transition-colors"
+                    className="flex items-center gap-1.5 text-xs sm:text-sm text-gray-700 py-1.5 sm:py-2 px-2 sm:px-3 bg-[#F5F9FF] rounded-lg hover:bg-[#E0EDFF] transition-colors"
                     style={{ animationDelay: `${index * 30}ms` }}
                   >
                     <span className="w-1.5 h-1.5 rounded-full bg-[#0046A4] flex-shrink-0" />
