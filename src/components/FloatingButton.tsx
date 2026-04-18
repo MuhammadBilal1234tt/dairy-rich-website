@@ -33,7 +33,7 @@ export default function FloatingButton() {
       {/* Tooltip */}
       {showTooltip && (
         <div className="bg-white text-gray-800 text-sm font-medium px-4 py-2 rounded-full shadow-lg border border-gray-100 whitespace-nowrap animate-fade-in">
-          💬 Order fresh milk now!
+          Contact us on WhatsApp
         </div>
       )}
 

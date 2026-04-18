@@ -79,8 +79,8 @@ export default function Gallery() {
               onClick={() => setActiveCategory(cat)}
               className={`px-5 py-2 rounded-full text-sm font-semibold transition-all duration-200 ${
                 activeCategory === cat
-                  ? 'bg-[#003DA5] text-white shadow-lg shadow-blue-500/30'
-                  : 'bg-[#F5F9FF] text-gray-600 hover:bg-[#E0EDFF] hover:text-[#003DA5]'
+                  ? 'bg-[#0046A4] text-white shadow-lg shadow-blue-500/30'
+                  : 'bg-[#F5F9FF] text-gray-600 hover:bg-[#E0EDFF] hover:text-[#0046A4]'
               }`}
             >
               {cat}
@@ -106,7 +106,7 @@ export default function Gallery() {
                     loading="lazy"
                   />
                   {/* Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#003DA5]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0046A4]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   {/* Caption */}
                   <div className="absolute bottom-0 left-0 right-0 p-5 text-white translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                     <span className="text-xs font-semibold bg-[#1BA0A8] px-2 py-0.5 rounded-full mb-2 inline-block">

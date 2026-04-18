@@ -1,5 +1,7 @@
 'use client'
 
+import { useState, useEffect } from 'react'
+
 const WHATSAPP_URL = 'https://wa.me/923184965522'
 
 const footerLinks = {
@@ -19,6 +21,12 @@ const footerLinks = {
 }
 
 export default function Footer() {
+  const [year, setYear] = useState(2024)
+
+  useEffect(() => {
+    setYear(new Date().getFullYear())
+  }, [])
+
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault()
     const target = document.querySelector(href)
@@ -36,15 +44,15 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#003DA5] to-[#1BA0A8] flex items-center justify-center text-2xl shadow-md">
-                🐄
+              <div className="w-12 h-12 rounded-full bg-[#0046A4] flex items-center justify-center shadow-md">
+                <span className="text-white font-bold text-sm tracking-tight">DR</span>
               </div>
               <div>
-                <span className="text-xl font-bold">Dairy Rich</span>
-                <p className="text-[#1BA0A8] text-xs font-medium">Pure &amp; Organic</p>
+                <span className="text-xl font-bold tracking-tight">Dairy Rich</span>
+                <p className="text-[#1BA0A8] text-xs font-medium uppercase tracking-widest">Pure &amp; Organic</p>
               </div>
             </div>
-            <p className="text-gray-400 leading-relaxed mb-6 max-w-sm">
+            <p className="text-gray-400 leading-relaxed mb-6 max-w-sm text-sm">
               Lahore&apos;s trusted organic dairy farm. We deliver fresh, unprocessed
               full-cream milk straight from our farm to your doorstep — within
               hours of milking.
@@ -65,7 +73,7 @@ export default function Footer() {
           {/* Links */}
           {Object.entries(footerLinks).map(([title, links]) => (
             <div key={title}>
-              <h3 className="text-white font-bold text-sm uppercase tracking-wider mb-4">
+              <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">
                 {title}
               </h3>
               <ul className="space-y-2.5">
@@ -88,12 +96,15 @@ export default function Footer() {
         {/* Divider */}
         <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-gray-500 text-sm">
-            © {new Date().getFullYear()} Dairy Rich. All rights reserved.
+            &copy; {year} Dairy Rich. All rights reserved.
           </p>
           <p className="text-gray-500 text-sm flex items-center gap-1.5">
-            <span>📍</span> Lahore, Pakistan
+            <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+            </svg>
+            Lahore, Pakistan
             <span className="mx-2">·</span>
-            <a href={`tel:+923184965522`} className="hover:text-[#1BA0A8] transition-colors">
+            <a href="tel:+923184965522" className="hover:text-[#1BA0A8] transition-colors">
               03184965522
             </a>
           </p>

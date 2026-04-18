@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from 'react'
 
-const WHATSAPP_URL = 'https://wa.me/923184965522?text=Hello%20Dairy%20Rich!%20I%20would%20like%20to%20order%20fresh%20milk.'
+const WHATSAPP_URL = 'https://wa.me/923184965522?text=Hello%20Dairy%20Rich!%20I%20would%20like%20to%20enquire%20about%20fresh%20milk%20delivery.'
 
 export default function Hero() {
   const parallaxRef = useRef<HTMLDivElement>(null)
@@ -23,36 +23,28 @@ export default function Hero() {
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background gradient + parallax image */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#003DA5] via-[#0055B8] to-[#1BA0A8]" />
+      {/* Background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#0046A4] via-[#005bbf] to-[#1BA0A8]" />
 
-      {/* Animated background shapes */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-white/5 animate-pulse" />
-        <div className="absolute -bottom-32 -left-32 w-80 h-80 rounded-full bg-[#1BA0A8]/20 animate-pulse" style={{ animationDelay: '1s' }} />
-        <div className="absolute top-1/3 right-1/4 w-48 h-48 rounded-full bg-white/5 animate-pulse" style={{ animationDelay: '2s' }} />
-      </div>
-
-      {/* Parallax floating element */}
+      {/* Subtle background shapes */}
       <div ref={parallaxRef} className="absolute inset-0 hero-parallax pointer-events-none">
-        <div className="absolute top-20 left-10 text-6xl opacity-10 animate-bounce" style={{ animationDelay: '0.5s' }}>🐄</div>
-        <div className="absolute top-40 right-20 text-5xl opacity-10 animate-bounce" style={{ animationDelay: '1.5s' }}>🥛</div>
-        <div className="absolute bottom-40 left-20 text-4xl opacity-10 animate-bounce" style={{ animationDelay: '1s' }}>🌿</div>
-        <div className="absolute bottom-20 right-10 text-5xl opacity-10 animate-bounce" style={{ animationDelay: '0s' }}>⭐</div>
+        <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-white/5" />
+        <div className="absolute -bottom-32 -left-32 w-80 h-80 rounded-full bg-white/5" />
+        <div className="absolute top-1/3 right-1/4 w-48 h-48 rounded-full bg-white/5" />
       </div>
 
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center py-24">
         {/* Badge */}
         <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-5 py-2 mb-8 animate-fade-in">
-          <span className="w-2 h-2 bg-[#25D366] rounded-full animate-pulse" />
-          <span className="text-white/90 text-sm font-medium">Lahore&apos;s #1 Organic Dairy Farm</span>
+          <span className="w-2 h-2 bg-[#25D366] rounded-full" />
+          <span className="text-white/90 text-sm font-medium tracking-wide">Lahore&apos;s Trusted Organic Dairy Farm</span>
         </div>
 
         {/* Brand name */}
         <h1
-          className="text-5xl sm:text-6xl md:text-7xl font-black text-white mb-4 tracking-tight animate-slide-up"
-          style={{ textShadow: '0 2px 20px rgba(0,0,0,0.2)' }}
+          className="text-5xl sm:text-6xl md:text-7xl font-extrabold text-white mb-4 tracking-tight animate-slide-up"
+          style={{ textShadow: '0 2px 20px rgba(0,0,0,0.15)' }}
         >
           Dairy Rich
         </h1>
@@ -60,8 +52,8 @@ export default function Hero() {
         {/* Sub tagline */}
         <div className="flex items-center justify-center gap-3 mb-6 animate-slide-up" style={{ animationDelay: '0.1s' }}>
           {['Fresh', 'Organic', 'Unprocessed'].map((tag, i) => (
-            <span key={tag} className="flex items-center gap-1.5 text-white/90 text-sm sm:text-base font-medium">
-              {i > 0 && <span className="w-1 h-1 rounded-full bg-[#1BA0A8]" />}
+            <span key={tag} className="flex items-center gap-1.5 text-white/90 text-sm sm:text-base font-medium tracking-wide">
+              {i > 0 && <span className="w-1 h-1 rounded-full bg-white/50" />}
               {tag}
             </span>
           ))}
@@ -69,7 +61,7 @@ export default function Hero() {
 
         {/* Main tagline */}
         <p
-          className="text-lg sm:text-xl md:text-2xl text-white/90 max-w-2xl mx-auto mb-10 leading-relaxed font-light animate-slide-up"
+          className="text-lg sm:text-xl md:text-2xl text-white/85 max-w-2xl mx-auto mb-10 leading-relaxed font-normal animate-slide-up"
           style={{ animationDelay: '0.2s' }}
         >
           We deliver <strong className="text-white font-semibold">organic full cream milk</strong> to your doorstep within a few hours of milking.
@@ -81,10 +73,10 @@ export default function Hero() {
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="group whatsapp-pulse bg-[#25D366] hover:bg-[#1ebe5d] text-white px-8 py-4 rounded-full text-lg font-bold flex items-center gap-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl shadow-lg shadow-green-500/30"
+            className="group whatsapp-pulse bg-[#25D366] hover:bg-[#1ebe5d] text-white px-8 py-4 rounded-full text-base font-semibold flex items-center gap-3 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-2xl shadow-lg shadow-green-500/30"
           >
             <WhatsAppIcon />
-            Order on WhatsApp
+            Chat on WhatsApp
             <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
@@ -95,7 +87,7 @@ export default function Hero() {
               e.preventDefault()
               document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' })
             }}
-            className="text-white border-2 border-white/50 hover:border-white hover:bg-white/10 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300"
+            className="text-white border border-white/40 hover:border-white hover:bg-white/10 px-8 py-4 rounded-full text-base font-medium transition-all duration-300"
           >
             Learn More
           </a>
@@ -109,17 +101,17 @@ export default function Hero() {
             { value: 'Rs.100', label: 'Starting Price' },
           ].map((stat) => (
             <div key={stat.label} className="text-center glass rounded-2xl py-4 px-3">
-              <div className="text-white text-2xl font-black">{stat.value}</div>
-              <div className="text-white/70 text-xs mt-1">{stat.label}</div>
+              <div className="text-white text-xl font-bold">{stat.value}</div>
+              <div className="text-white/65 text-xs mt-1 tracking-wide">{stat.label}</div>
             </div>
           ))}
         </div>
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/60 animate-bounce z-10">
-        <span className="text-xs font-medium">Scroll Down</span>
-        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/50 z-10">
+        <span className="text-xs font-medium tracking-widest uppercase">Scroll</span>
+        <svg className="w-5 h-5 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
         </svg>
       </div>
