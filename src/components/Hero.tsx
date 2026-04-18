@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import Image from 'next/image'
 
 const WHATSAPP_URL = 'https://wa.me/923184965522?text=Hello%20Dairy%20Rich!%20I%20would%20like%20to%20enquire%20about%20fresh%20milk%20delivery.'
 
@@ -23,14 +24,41 @@ export default function Hero() {
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#0046A4] via-[#005bbf] to-[#1BA0A8]" />
+      {/* Farm photo background */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/farm1.jpg"
+          alt=""
+          fill
+          priority
+          className="object-cover object-center"
+          sizes="100vw"
+        />
+      </div>
 
-      {/* Subtle background shapes */}
-      <div ref={parallaxRef} className="absolute inset-0 hero-parallax pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-white/5" />
-        <div className="absolute -bottom-32 -left-32 w-80 h-80 rounded-full bg-white/5" />
-        <div className="absolute top-1/3 right-1/4 w-48 h-48 rounded-full bg-white/5" />
+      {/* Dark + brand-colour overlay for legibility */}
+      <div className="absolute inset-0 z-[1] bg-gradient-to-br from-[#0046A4]/90 via-[#005bbf]/80 to-[#1BA0A8]/75" />
+
+      {/* Decorative geometric shapes */}
+      <div ref={parallaxRef} className="absolute inset-0 z-[2] hero-parallax pointer-events-none">
+        {/* large blurred circles */}
+        <div className="absolute -top-40 -right-40 w-[32rem] h-[32rem] rounded-full bg-white/5 blur-3xl" />
+        <div className="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-white/5 blur-3xl" />
+        {/* mid accent ring */}
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full border border-white/10" />
+        <div className="absolute bottom-1/4 right-1/4 w-48 h-48 rounded-full border border-white/10" />
+        {/* small filled circles */}
+        <div className="absolute top-1/3 right-1/4 w-40 h-40 rounded-full bg-white/5" />
+        <div className="absolute top-1/2 left-1/6 w-24 h-24 rounded-full bg-white/5" />
+        {/* diagonal stripe overlay */}
+        <div
+          className="absolute inset-0 opacity-[0.04]"
+          style={{
+            backgroundImage:
+              'repeating-linear-gradient(45deg, white 0, white 1px, transparent 0, transparent 50%)',
+            backgroundSize: '30px 30px',
+          }}
+        />
       </div>
 
       {/* Content */}

@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 
 const WHATSAPP_URL = 'https://wa.me/923184965522'
 
@@ -44,13 +45,13 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 rounded-full bg-[#0046A4] flex items-center justify-center shadow-md">
-                <span className="text-white font-bold text-sm tracking-tight">DR</span>
-              </div>
-              <div>
-                <span className="text-xl font-bold tracking-tight">Dairy Rich</span>
-                <p className="text-[#1BA0A8] text-xs font-medium uppercase tracking-widest">Pure &amp; Organic</p>
-              </div>
+              <Image
+                src="/images/mylogo.png"
+                alt="Dairy Rich Logo"
+                width={110}
+                height={62}
+                className="object-contain brightness-0 invert"
+              />
             </div>
             <p className="text-gray-400 leading-relaxed mb-6 max-w-sm text-sm">
               Lahore&apos;s trusted organic dairy farm. We deliver fresh, unprocessed
