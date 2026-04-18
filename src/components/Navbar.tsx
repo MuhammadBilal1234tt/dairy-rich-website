@@ -54,9 +54,9 @@ export default function Navbar() {
             src="/images/mylogo.png"
             alt="Dairy Rich Logo"
             width={85}
-            height={48}
+            height={85}
             priority
-            className="object-contain"
+            className="object-contain w-10 h-10 md:w-[85px] md:h-[85px]"
           />
         </a>
 
