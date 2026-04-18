@@ -27,7 +27,7 @@ export default function Hero() {
       {/* Farm photo background */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/farm1.jpg"
+          src="/images/shutter.png"
           alt=""
           fill
           priority
