@@ -53,10 +53,10 @@ export default function Navbar() {
           <Image
             src="/images/mylogo.png"
             alt="Dairy Rich Logo"
-            width={85}
-            height={85}
+            width={120}
+            height={110}
             priority
-            className="object-contain w-10 h-10 md:w-[130px] md:h-[120px]"
+            className="object-contain w-10 h-10 md:w-[110px] md:h-[110px]"
           />
         </a>
 
