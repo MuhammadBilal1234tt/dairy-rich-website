@@ -98,7 +98,7 @@ export default function Hero() {
           {[
             { value: '100%', label: 'Organic' },
             { value: '2–3 hrs', label: 'Fresh Delivery' },
-            { value: 'Rs.100', label: 'Starting Price' },
+            { value: 'Rs.240', label: 'Starting Price' },
           ].map((stat) => (
             <div key={stat.label} className="text-center glass rounded-2xl py-4 px-3">
               <div className="text-white text-xl font-bold">{stat.value}</div>

@@ -105,7 +105,7 @@ export default function Benefits() {
                 Our Pricing
               </p>
               <div className="flex items-baseline gap-3">
-                <span className="text-5xl font-bold text-[#0046A4]">Rs.100</span>
+                <span className="text-5xl font-bold text-[#0046A4]">Rs.260</span>
                 <span className="text-gray-400 text-lg">/ litre</span>
               </div>
               <p className="text-gray-500 mt-2 text-sm">

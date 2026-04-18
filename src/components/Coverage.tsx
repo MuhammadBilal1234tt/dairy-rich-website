@@ -3,23 +3,29 @@
 import ScrollReveal from './ScrollReveal'
 
 const deliveryAreas = [
-  'DHA Phase 1–8',
-  'Bahria Town',
-  'Johar Town',
-  'Gulberg I–V',
-  'Model Town',
-  'Garden Town',
-  'Faisal Town',
-  'Township',
-  'Iqbal Town',
-  'Allama Iqbal Town',
-  'Wapda Town',
-  'Raiwind Road',
-  'Canal Road',
-  'Thokar Niaz Baig',
-  'Bedian Road',
-  'Lahore Cantt',
-]
+  'Ali View Garden',
+  'Ashiana Qaid',
+  'Askari III, V, VIII, XI',
+  'Bhatta Chowk',
+  'Bridge Colony',
+  'Cavalry Ground',
+  'DHA (All Phases)',
+  'Falcon Complex',
+  'Gulberg',
+  'Husnainabad',
+  'Iqbal Park',
+  'Kot Lakhpat',
+  'Model Colony',
+  'Nishat Colony',
+  'Pak Arab',
+  'Punjab Society',
+  'RA Bazar',
+  'State Life',
+  'Super Town',
+  'Venus Housing',
+  'Waheed Brothers',
+  'Walton Road'
+];
 
 // Google Maps embed URL for Dairy Rich Farm exact location
 const MAPS_EMBED_URL =
