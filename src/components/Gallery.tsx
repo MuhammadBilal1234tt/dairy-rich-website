@@ -55,7 +55,7 @@ export default function Gallery() {
       : galleryImages.filter((img) => img.category === activeCategory)
 
   return (
-    <section id="gallery" className="section-padding bg-white">
+    <section id="gallery" className="section-padding section-dots section-accent-top">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <ScrollReveal className="text-center mb-12">
@@ -66,7 +66,7 @@ export default function Gallery() {
             See the <span className="gradient-text">Difference</span>
           </h2>
           <p className="text-gray-500 max-w-xl mx-auto text-lg">
-            A look inside Dairy Rich — our farm, our cattle, and the fresh milk
+            A look inside Dairy Rich: our farm, our cattle, and the fresh milk
             we deliver to your family every day.
           </p>
         </ScrollReveal>
