@@ -45,7 +45,7 @@ export default function Coverage() {
             <span className="gradient-text">Lahore</span>
           </h2>
           <p className="text-gray-500 max-w-xl mx-auto text-lg">
-            Freshly milked every morning and delivered straight to your door —
+            Freshly milked every morning and delivered straight to your door,
             wherever you are in Lahore.
           </p>
         </ScrollReveal>
@@ -103,7 +103,7 @@ export default function Coverage() {
                   Don&apos;t see your area?
                 </p>
                 <p className="text-[#0046A4] font-semibold text-sm">
-                  WhatsApp us — we&apos;ll check coverage for you.
+                  WhatsApp us and we&apos;ll check coverage for you.
                 </p>
               </div>
             </div>

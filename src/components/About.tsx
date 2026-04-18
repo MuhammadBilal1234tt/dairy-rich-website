@@ -11,7 +11,7 @@ const features = [
     ),
     title: 'Organic Certified',
     description:
-      'Our cows graze on natural, pesticide-free pastures. Every drop of milk is 100% organic — no hormones, no artificial feed, no shortcuts.',
+      'Our cows graze on natural, pesticide-free pastures. Every drop of milk is 100% organic: no hormones, no artificial feed, no shortcuts.',
   },
   {
     icon: (
@@ -49,7 +49,7 @@ export default function About() {
             <span className="gradient-text">Dairy Rich?</span>
           </h2>
           <p className="text-gray-500 max-w-xl mx-auto text-lg leading-relaxed">
-            We are not just a dairy farm — we are a promise of purity, freshness,
+            We are not just a dairy farm; we are a promise of purity, freshness,
             and trust for your family.
           </p>
         </ScrollReveal>
@@ -78,7 +78,7 @@ export default function About() {
               Trusted by hundreds of families across Lahore
             </p>
             <p className="text-white/80 text-sm">
-              Farm-fresh milk with zero adulterants — because your family deserves the best.
+              Farm-fresh milk with zero adulterants, because your family deserves the best.
             </p>
           </div>
         </ScrollReveal>

@@ -26,7 +26,7 @@ const benefits = [
     ),
     title: 'More Vitamins',
     description:
-      'Packed with Vitamins A, D, B2, and B12 — essential for immunity, vision, skin health, and energy metabolism.',
+      'Packed with Vitamins A, D, B2, and B12, essential for immunity, vision, skin health, and energy metabolism.',
     stat: '4x',
     statLabel: 'richer than UHT',
     color: 'bg-[#0046A4]',
@@ -61,7 +61,7 @@ export default function Benefits() {
             <span className="gradient-text">Better for You</span>
           </h2>
           <p className="text-gray-500 max-w-xl mx-auto text-lg">
-            Fresh, unprocessed milk retains all its natural goodness — giving you
+            Fresh, unprocessed milk retains all its natural goodness, giving you
             significantly more nutrition than processed or packaged alternatives.
           </p>
         </ScrollReveal>
