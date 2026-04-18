@@ -152,7 +152,19 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Button styles */
+/* Subtle dot-grid background for plain white sections */
+.section-dots {
+  background-color: #ffffff;
+  background-image: radial-gradient(#dbeafe 1.5px, transparent 1.5px);
+  background-size: 28px 28px;
+}
+
+/* Subtle section top accent line */
+.section-accent-top {
+  border-top: 3px solid transparent;
+  border-image: linear-gradient(90deg, transparent, #0046A4 30%, #1BA0A8 70%, transparent) 1;
+}
+
 .btn-primary {
   background: linear-gradient(135deg, #25D366, #128C7E);
   color: white;

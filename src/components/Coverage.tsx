@@ -33,7 +33,7 @@ const MAPS_EMBED_URL =
 
 export default function Coverage() {
   return (
-    <section id="coverage" className="section-padding bg-[#F5F9FF]">
+    <section id="coverage" className="section-padding bg-[#F5F9FF] section-accent-top">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <ScrollReveal className="text-center mb-16">

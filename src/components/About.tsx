@@ -21,7 +21,7 @@ const features = [
     ),
     title: 'Unprocessed & Unadulterated',
     description:
-      'We never homogenize or ultra-pasteurize our milk. What you receive is pure, raw, full-cream milk — exactly as nature intended.',
+      'We never homogenize or ultra-pasteurize our milk. What you receive is pure, raw, full-cream milk, exactly as nature intended.',
   },
   {
     icon: (
@@ -37,7 +37,7 @@ const features = [
 
 export default function About() {
   return (
-    <section id="about" className="section-padding bg-white">
+    <section id="about" className="section-padding section-dots section-accent-top">
       <div className="max-w-7xl mx-auto">
         {/* Section header */}
         <ScrollReveal className="text-center mb-16">

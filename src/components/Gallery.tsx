@@ -55,7 +55,7 @@ export default function Gallery() {
       : galleryImages.filter((img) => img.category === activeCategory)
 
   return (
-    <section id="gallery" className="section-padding bg-white">
+    <section id="gallery" className="section-padding section-dots section-accent-top">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <ScrollReveal className="text-center mb-12">

@@ -49,7 +49,7 @@ const benefits = [
 
 export default function Benefits() {
   return (
-    <section id="benefits" className="section-padding bg-[#F5F9FF]">
+    <section id="benefits" className="section-padding bg-[#F5F9FF] section-accent-top">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <ScrollReveal className="text-center mb-16">

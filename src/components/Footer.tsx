@@ -50,12 +50,12 @@ export default function Footer() {
                 alt="Dairy Rich Logo"
                 width={110}
                 height={62}
-                className="object-contain brightness-0 invert"
+                className="object-contain"
               />
             </div>
             <p className="text-gray-400 leading-relaxed mb-6 max-w-sm text-sm">
               Lahore&apos;s trusted organic dairy farm. We deliver fresh, unprocessed
-              full-cream milk straight from our farm to your doorstep — within
+              full-cream milk straight from our farm to your doorstep, within
               hours of milking.
             </p>
             <a
@@ -99,16 +99,20 @@ export default function Footer() {
           <p className="text-gray-500 text-sm">
             &copy; {year} Dairy Rich. All rights reserved.
           </p>
-          <p className="text-gray-500 text-sm flex items-center gap-1.5">
-            <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
-            </svg>
-            Lahore, Pakistan
-            <span className="mx-2">·</span>
-            <a href="tel:+923184965522" className="hover:text-[#1BA0A8] transition-colors">
+          <div className="flex items-center gap-4 text-gray-500 text-sm">
+            <span className="flex items-center gap-1.5">
+              <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+              </svg>
+              Lahore, Pakistan
+            </span>
+            <a href="tel:+923184965522" className="flex items-center gap-1.5 hover:text-[#1BA0A8] transition-colors">
+              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
               03184965522
             </a>
-          </p>
+          </div>
         </div>
       </div>
     </footer>
