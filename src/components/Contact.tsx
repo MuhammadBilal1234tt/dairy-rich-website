@@ -65,7 +65,7 @@ export default function Contact() {
                 ),
                 label: 'Location',
                 value: 'Lahore, Pakistan',
-                href: 'https://maps.app.goo.gl/ZkkEyumJNpXzJs919',
+                href: 'https://maps.app.goo.gl/tmm9Votk9nhCkbSMA',
               },
               {
                 icon: (

@@ -21,9 +21,9 @@ const deliveryAreas = [
   'Lahore Cantt',
 ]
 
-// Proper Google Maps embed URL for Lahore, Pakistan
+// Google Maps embed URL for Dairy Rich Farm exact location
 const MAPS_EMBED_URL =
-  'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d217394.48583566787!2d74.01397745!3d31.482803400000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39190483e58107d9%3A0xc23abe9765e56a6!2sLahore%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2spk!4v1700000000000!5m2!1sen!2spk'
+  'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3404.2!2d74.3764635!3d31.1880432!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3919b1703a0198ad%3A0x661d4b46fc76ffe7!2sDairy%20Rich%20Farm!5e0!3m2!1sen!2spk!4v1700000000000!5m2!1sen!2spk'
 
 export default function Coverage() {
   return (
