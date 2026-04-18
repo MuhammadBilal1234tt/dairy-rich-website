@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const WHATSAPP_URL = 'https://wa.me/923184965522'
 
@@ -49,27 +50,14 @@ export default function Navbar() {
           onClick={(e) => handleNavClick(e, '#home')}
           className="flex items-center gap-3"
         >
-          <div className="w-10 h-10 rounded-full bg-[#0046A4] flex items-center justify-center shadow-md">
-            <svg viewBox="0 0 24 24" className="w-5 h-5 fill-white" xmlns="http://www.w3.org/2000/svg">
-              <path d="M20.5 3.5C20.5 3.5 19 2 16 2c-1.5 0-2.6.4-3.5.9C11.6 2.4 10.5 2 9 2 6 2 4.5 3.5 4.5 3.5L3 6l2 1.5L3 10c0 3.3 2.7 6 6 6h.2l.7 4h4.2l.7-4H15c3.3 0 6-2.7 6-6l-2-2.5L21 6l-1.5-2.5z"/>
-            </svg>
-          </div>
-          <div>
-            <span
-              className={`text-lg font-bold tracking-tight ${
-                isScrolled ? 'text-[#0046A4]' : 'text-white'
-              }`}
-            >
-              Dairy Rich
-            </span>
-            <p
-              className={`text-xs font-medium tracking-widest uppercase ${
-                isScrolled ? 'text-gray-500' : 'text-white/70'
-              }`}
-            >
-              Pure &amp; Organic
-            </p>
-          </div>
+          <Image
+            src="/images/mylogo.png"
+            alt="Dairy Rich Logo"
+            width={140}
+            height={48}
+            priority
+            className="object-contain"
+          />
         </a>
 
         {/* Desktop Nav */}
