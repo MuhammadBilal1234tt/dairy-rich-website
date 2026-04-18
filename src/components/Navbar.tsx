@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import Link from 'next/link'
 import Image from 'next/image'
 
 const WHATSAPP_URL = 'https://wa.me/923184965522'
@@ -25,6 +24,12 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  // Prevent body scroll when drawer is open
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? 'hidden' : ''
+    return () => { document.body.style.overflow = '' }
+  }, [menuOpen])
+
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault()
     setMenuOpen(false)
@@ -36,104 +41,148 @@ export default function Navbar() {
   }
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-lg py-3'
-          : 'bg-transparent py-5'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        {/* Logo */}
-        <a
-          href="#home"
-          onClick={(e) => handleNavClick(e, '#home')}
-          className="flex items-center gap-3"
-        >
+    <>
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled
+            ? 'bg-white/95 backdrop-blur-md shadow-lg py-3'
+            : 'bg-transparent py-5'
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+          {/* Logo */}
+          <a
+            href="#home"
+            onClick={(e) => handleNavClick(e, '#home')}
+            className="flex items-center gap-3"
+          >
+            <Image
+              src="/images/mylogo.png"
+              alt="Dairy Rich Logo"
+              width={120}
+              height={110}
+              priority
+              className="object-contain w-16 h-16 md:w-[110px] md:h-[110px]"
+            />
+          </a>
+
+          {/* Desktop Nav */}
+          <nav className="hidden md:flex items-center gap-6">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={(e) => handleNavClick(e, link.href)}
+                className={`text-sm font-medium transition-colors duration-200 hover:text-[#0046A4] ${
+                  isScrolled ? 'text-[#1A1A1A]' : 'text-white/90'
+                }`}
+              >
+                {link.label}
+              </a>
+            ))}
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-2 bg-[#25D366] hover:bg-[#1ebe5d] text-white px-5 py-2.5 rounded-full text-sm font-semibold flex items-center gap-2 transition-all duration-200 hover:shadow-lg hover:shadow-green-500/30 hover:-translate-y-0.5"
+            >
+              <WhatsAppIcon />
+              WhatsApp
+            </a>
+          </nav>
+
+          {/* Mobile hamburger */}
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className={`md:hidden p-2 rounded-lg transition-colors ${
+              isScrolled ? 'text-[#0046A4]' : 'text-white'
+            }`}
+            aria-label="Toggle menu"
+          >
+            <span
+              className={`block w-6 h-0.5 mb-1.5 rounded transition-all duration-200 ${
+                menuOpen ? 'rotate-45 translate-y-2 bg-[#0046A4]' : isScrolled ? 'bg-[#0046A4]' : 'bg-white'
+              }`}
+            />
+            <span
+              className={`block w-6 h-0.5 mb-1.5 rounded transition-all duration-200 ${
+                menuOpen ? 'opacity-0 bg-[#0046A4]' : isScrolled ? 'bg-[#0046A4]' : 'bg-white'
+              }`}
+            />
+            <span
+              className={`block w-6 h-0.5 rounded transition-all duration-200 ${
+                menuOpen ? '-rotate-45 -translate-y-2 bg-[#0046A4]' : isScrolled ? 'bg-[#0046A4]' : 'bg-white'
+              }`}
+            />
+          </button>
+        </div>
+      </header>
+
+      {/* Backdrop */}
+      <div
+        onClick={() => setMenuOpen(false)}
+        className={`fixed inset-0 z-40 bg-black/40 backdrop-blur-sm md:hidden transition-opacity duration-200 ${
+          menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+        }`}
+      />
+
+      {/* Side Drawer */}
+      <aside
+        className={`fixed top-0 right-0 z-50 h-full w-72 bg-white shadow-2xl md:hidden flex flex-col transition-transform duration-200 ease-out ${
+          menuOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}
+      >
+        {/* Drawer header */}
+        <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100">
           <Image
             src="/images/mylogo.png"
             alt="Dairy Rich Logo"
-            width={120}
-            height={110}
-            priority
-            className="object-contain w-10 h-10 md:w-[110px] md:h-[110px]"
+            width={70}
+            height={65}
+            className="object-contain w-14 h-14"
           />
-        </a>
+          <button
+            onClick={() => setMenuOpen(false)}
+            aria-label="Close menu"
+            className="p-2 rounded-lg text-gray-500 hover:text-[#0046A4] hover:bg-[#0046A4]/10 transition-colors"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
 
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-6">
-          {navLinks.map((link) => (
+        {/* Nav links */}
+        <nav className="flex-1 overflow-y-auto px-4 py-4 flex flex-col gap-1">
+          {navLinks.map((link, i) => (
             <a
               key={link.href}
               href={link.href}
               onClick={(e) => handleNavClick(e, link.href)}
-              className={`text-sm font-medium transition-colors duration-200 hover:text-[#0046A4] ${
-                isScrolled ? 'text-[#1A1A1A]' : 'text-white/90'
+              style={{ transitionDelay: menuOpen ? `${i * 30}ms` : '0ms' }}
+              className={`text-[#1A1A1A] font-medium py-3 px-4 rounded-xl hover:bg-[#0046A4]/10 hover:text-[#0046A4] transition-all duration-150 ${
+                menuOpen ? 'translate-x-0 opacity-100' : 'translate-x-4 opacity-0'
               }`}
             >
               {link.label}
             </a>
           ))}
-          <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="ml-2 bg-[#25D366] hover:bg-[#1ebe5d] text-white px-5 py-2.5 rounded-full text-sm font-semibold flex items-center gap-2 transition-all duration-200 hover:shadow-lg hover:shadow-green-500/30 hover:-translate-y-0.5"
-          >
-            <WhatsAppIcon />
-            WhatsApp
-          </a>
         </nav>
 
-        {/* Mobile hamburger */}
-        <button
-          onClick={() => setMenuOpen(!menuOpen)}
-          className={`md:hidden p-2 rounded-lg transition-colors ${
-            isScrolled ? 'text-[#0046A4]' : 'text-white'
-          }`}
-          aria-label="Toggle menu"
-        >
-          {menuOpen ? (
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          ) : (
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          )}
-        </button>
-      </div>
-
-      {/* Mobile Menu */}
-      <div
-        className={`md:hidden transition-all duration-300 overflow-hidden ${
-          menuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-        }`}
-      >
-        <nav className="bg-white/95 backdrop-blur-md border-t border-gray-100 px-4 py-4 flex flex-col gap-1">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={(e) => handleNavClick(e, link.href)}
-              className="text-[#1A1A1A] font-medium py-3 px-4 rounded-lg hover:bg-[#0046A4]/10 hover:text-[#0046A4] transition-colors"
-            >
-              {link.label}
-            </a>
-          ))}
+        {/* WhatsApp CTA */}
+        <div className="px-4 pb-6 pt-2">
           <a
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-2 bg-[#25D366] text-white py-3 px-4 rounded-full font-semibold text-center flex items-center justify-center gap-2"
+            className="w-full bg-[#25D366] hover:bg-[#1ebe5d] text-white py-3.5 px-4 rounded-2xl font-semibold text-center flex items-center justify-center gap-2 transition-colors duration-150 shadow-md shadow-green-500/20"
           >
             <WhatsAppIcon />
             Chat on WhatsApp
           </a>
-        </nav>
-      </div>
-    </header>
+        </div>
+      </aside>
+    </>
   )
 }
 
