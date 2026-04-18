@@ -49,20 +49,22 @@ export default function Navbar() {
           onClick={(e) => handleNavClick(e, '#home')}
           className="flex items-center gap-3"
         >
-          <div className="w-11 h-11 rounded-full bg-gradient-to-br from-[#003DA5] to-[#1BA0A8] flex items-center justify-center shadow-md">
-            <span className="text-xl">🐄</span>
+          <div className="w-10 h-10 rounded-full bg-[#0046A4] flex items-center justify-center shadow-md">
+            <svg viewBox="0 0 24 24" className="w-5 h-5 fill-white" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20.5 3.5C20.5 3.5 19 2 16 2c-1.5 0-2.6.4-3.5.9C11.6 2.4 10.5 2 9 2 6 2 4.5 3.5 4.5 3.5L3 6l2 1.5L3 10c0 3.3 2.7 6 6 6h.2l.7 4h4.2l.7-4H15c3.3 0 6-2.7 6-6l-2-2.5L21 6l-1.5-2.5z"/>
+            </svg>
           </div>
           <div>
             <span
-              className={`text-xl font-bold ${
-                isScrolled ? 'text-[#003DA5]' : 'text-white'
+              className={`text-lg font-bold tracking-tight ${
+                isScrolled ? 'text-[#0046A4]' : 'text-white'
               }`}
             >
               Dairy Rich
             </span>
             <p
-              className={`text-xs font-medium ${
-                isScrolled ? 'text-[#1BA0A8]' : 'text-white/80'
+              className={`text-xs font-medium tracking-widest uppercase ${
+                isScrolled ? 'text-gray-500' : 'text-white/70'
               }`}
             >
               Pure &amp; Organic
@@ -77,7 +79,7 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               onClick={(e) => handleNavClick(e, link.href)}
-              className={`text-sm font-medium transition-colors duration-200 hover:text-[#1BA0A8] ${
+              className={`text-sm font-medium transition-colors duration-200 hover:text-[#0046A4] ${
                 isScrolled ? 'text-[#1A1A1A]' : 'text-white/90'
               }`}
             >
@@ -99,7 +101,7 @@ export default function Navbar() {
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className={`md:hidden p-2 rounded-lg transition-colors ${
-            isScrolled ? 'text-[#003DA5]' : 'text-white'
+            isScrolled ? 'text-[#0046A4]' : 'text-white'
           }`}
           aria-label="Toggle menu"
         >
@@ -127,7 +129,7 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               onClick={(e) => handleNavClick(e, link.href)}
-              className="text-[#1A1A1A] font-medium py-3 px-4 rounded-lg hover:bg-[#003DA5]/10 hover:text-[#003DA5] transition-colors"
+              className="text-[#1A1A1A] font-medium py-3 px-4 rounded-lg hover:bg-[#0046A4]/10 hover:text-[#0046A4] transition-colors"
             >
               {link.label}
             </a>

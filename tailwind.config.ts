@@ -10,18 +10,18 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#003DA5',
-          dark: '#002d7a',
-          light: '#0066CC',
+          DEFAULT: '#0046A4',
+          dark: '#003380',
+          light: '#1a5fc4',
         },
         teal: {
           DEFAULT: '#1BA0A8',
           light: '#20B2AA',
         },
-        accent: '#FFD700',
+        accent: '#FFB81C',
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['Poppins', 'Inter', 'system-ui', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-out forwards',
@@ -44,8 +44,8 @@ const config: Config = {
         },
       },
       backgroundImage: {
-        'hero-gradient': 'linear-gradient(135deg, #003DA5 0%, #1BA0A8 50%, #0066CC 100%)',
-        'card-gradient': 'linear-gradient(135deg, #003DA5 0%, #0066CC 100%)',
+        'hero-gradient': 'linear-gradient(135deg, #0046A4 0%, #1BA0A8 50%, #1a5fc4 100%)',
+        'card-gradient': 'linear-gradient(135deg, #0046A4 0%, #1a5fc4 100%)',
       },
     },
   },
