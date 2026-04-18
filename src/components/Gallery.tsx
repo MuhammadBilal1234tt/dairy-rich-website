@@ -6,37 +6,37 @@ import ScrollReveal from './ScrollReveal'
 
 const galleryImages = [
   {
-    src: 'https://images.unsplash.com/photo-1516467508483-a7212febe31a?w=800&q=80',
+    src: '/images/bike.png',
     alt: 'Happy cows grazing on fresh green pasture',
     category: 'Farm',
-    caption: 'Our happy, healthy cows graze freely on natural pastures',
+    caption: 'Our Ride, to deliver the freshest milk from our farm to your doorstep',
   },
   {
-    src: 'https://images.unsplash.com/photo-1585296580948-f9a29b3c8e66?w=800&q=80',
+    src: '/images/pack.png',
     alt: 'Fresh organic milk in glass bottle',
     category: 'Product',
     caption: 'Pure, fresh milk delivered in hygienic sealed packaging',
   },
   {
-    src: 'https://images.unsplash.com/photo-1597733336794-12d05021d510?w=800&q=80',
+    src: '/images/cow.png',
     alt: 'Dairy farm operations',
     category: 'Farm',
     caption: 'State-of-the-art farm facilities ensuring highest hygiene',
   },
   {
-    src: 'https://images.unsplash.com/photo-1611601374006-5d15bb4d02f4?w=800&q=80',
+    src: '/images/cow9.png',
     alt: 'Cows in the barn at dairy farm',
     category: 'Cattle',
     caption: 'Well-cared-for cattle producing the richest, creamiest milk',
   },
   {
-    src: 'https://images.unsplash.com/photo-1548081742-0bfb0a4c43ac?w=800&q=80',
+    src: '/images/new4.png',
     alt: 'Glass of fresh cold milk',
     category: 'Product',
     caption: 'Nothing beats the taste of real, fresh farm milk',
   },
   {
-    src: 'https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=800&q=80',
+    src: '/images/shutter.png',
     alt: 'Green farm fields at sunrise',
     category: 'Farm',
     caption: 'Our 50-acre organic farm in the heart of Lahore',
